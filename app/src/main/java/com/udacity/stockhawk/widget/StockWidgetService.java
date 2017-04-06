@@ -55,7 +55,6 @@ public class StockWidgetService extends RemoteViewsService {
                 float absChange = cursor.getFloat(cursor.getColumnIndex(Contract.Quote.COLUMN_ABSOLUTE_CHANGE));
                 float percentChange = cursor.getFloat(cursor.getColumnIndex(Contract.Quote.COLUMN_PERCENTAGE_CHANGE));
 
-                cursor.close();
 
                 ContentValues cv = new ContentValues();
 
@@ -71,6 +70,7 @@ public class StockWidgetService extends RemoteViewsService {
 
             }
 
+            cursor.close();
 
         }
 
