@@ -50,7 +50,7 @@ public class StockWidgetService extends RemoteViewsService {
                         (Contract.Quote.URI, null,
                                 null, null, null
                         );
-              while(cursor.moveToFirst()){
+              while(cursor.moveToNext()){
               String symbol =  cursor.getString(cursor.getColumnIndex(Contract.Quote.COLUMN_SYMBOL));
                 float price = cursor.getFloat(cursor.getColumnIndex(Contract.Quote.COLUMN_PRICE));
 
