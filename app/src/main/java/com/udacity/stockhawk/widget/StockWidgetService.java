@@ -11,12 +11,14 @@ import android.widget.RemoteViewsService;
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
+import com.udacity.stockhawk.ui.ChartActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import static com.udacity.stockhawk.R.id.symbol;
+import static com.udacity.stockhawk.ui.ChartActivity.EXTRA_SYMBOL;
 
 /**
  * Created by yodgorbekkomilov on 4/2/17.
@@ -42,7 +44,7 @@ public class StockWidgetService extends RemoteViewsService {
         public void onCreate() {
             ContentResolver contentResolver = mApplicationContext.getContentResolver();
              mCvList.clear();
-
+// are you here
 
                 Cursor cursor = contentResolver.query
                         (Contract.Quote.URI, null,
@@ -96,7 +98,16 @@ public class StockWidgetService extends RemoteViewsService {
            RemoteViews remoteViews = new RemoteViews(mApplicationContext.getPackageName(),
                    R.layout.list_item_quote);
 
+            //start intent
+            Intent graphIntent = new Intent(mApplicationContext, ChartActivity.class);
+            graphIntent.putExtra(
+                    EXTRA_SYMBOL,symbol
+            );
+
             remoteViews.setTextViewText(symbol, cv.getAsString(Contract.Quote.COLUMN_SYMBOL));
+
+            // here you have to tell at the Device to fire the GraphActivity
+            remoteViews.setOnClickFillInIntent(R.id.item_view, graphIntent);
 
 
             return remoteViews;
