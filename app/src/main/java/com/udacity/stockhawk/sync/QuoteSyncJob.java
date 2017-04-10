@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Looper;
+import android.widget.Toast;
 
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
@@ -20,6 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Handler;
 
 import timber.log.Timber;
 import yahoofinance.Stock;
@@ -67,23 +70,21 @@ public final class QuoteSyncJob {
             Timber.d(quotes.toString());
 
             ArrayList<ContentValues> quoteCVs = new ArrayList<>();
-            final ArrayList<String> invalidSymbol = new ArrayList<>();
 
             while (iterator.hasNext()) {
                 String symbol = iterator.next();
 
-                if (quotes.get(symbol) != null){
-                    if (!quotes.get(symbol).isValid()) {
-
-                    } else {
-                        quoteCVs.add(quoteCVs);
-                    }
-
-
-                }
 
                 Stock stock = quotes.get(symbol);
                 StockQuote quote = stock.getQuote();
+                if (quotes.get(symbol) != null){
+                    if (!quotes.get(symbol).isValid()){
+                        continue;
+                    }
+
+                }
+
+
 
                 float price = quote.getPrice().floatValue();
                 float change = quote.getChange().floatValue();

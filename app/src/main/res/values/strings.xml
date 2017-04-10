@@ -35,7 +35,7 @@
     <string name="toast_no_connectivity">Will refresh when network available.</string>
     <string name="widget_title">Awesome Project</string>
     <string name="stock_name" translatable="false">Google</string>
-    <string name="add_stock">Add Stock to the list</string>
+    <string name="add_stock" translatable="false">Add Stock to the list</string>
     <string name="search_on_google">Search</string>
     <string name="stock_list">Stock list</string>
     <string name="stock_chart">Stock chart</string>

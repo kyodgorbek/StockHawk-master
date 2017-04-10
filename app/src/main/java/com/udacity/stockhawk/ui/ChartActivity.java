@@ -37,7 +37,6 @@ import static android.R.attr.data;
 import static android.R.attr.entries;
 import static android.R.attr.label;
 import static android.R.attr.y;
-import static com.udacity.stockhawk.R.id.google;
 import static com.udacity.stockhawk.R.id.symbol;
 
 public class ChartActivity extends AppCompatActivity {

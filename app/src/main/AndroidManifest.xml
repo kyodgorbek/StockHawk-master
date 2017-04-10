@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.udacity.stockhawk">
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.Manifest.permission.RECEIVE_BOOT_COMPLETED" />
-
     <application
         android:name=".StockHawkApp"
         android:allowBackup="false"
@@ -18,44 +16,32 @@
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <service
             android:name=".sync.QuoteIntentService"
             android:exported="false" />
-
         <provider
             android:name=".data.StockProvider"
             android:authorities="com.udacity.stockhawk"
             android:exported="false" />
-
         <service
             android:name=".sync.QuoteJobService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity android:name=".ui.ChartActivity"></activity>
-
+        <activity android:name=".ui.ChartActivity"/>
         <receiver android:name="com.udacity.stockhawk.widget.StockWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_provider" />
         </receiver>
-
-        <service android:name=".widget.StockWidgetService"
-            android:enabled="true"
-            android:exported="false"
+        <service
+            android:name=".widget.StockWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
-
-
     </application>
-
 </manifest>

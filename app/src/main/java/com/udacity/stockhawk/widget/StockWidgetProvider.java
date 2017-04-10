@@ -23,20 +23,7 @@ import timber.log.Timber;
 public class StockWidgetProvider extends AppWidgetProvider {
 
 
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Timber.d("on receive: "+intent.getAction());
-
-        if(QuoteSyncJob.ACTION_DATA_UPDATED.equalsIgnoreCase(intent.getAction())) {
-            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-            int appWidgetIds[] = appWidgetManager.getAppWidgetIds(new ComponentName(context, this.getClass()));
-            onUpdate(context,appWidgetManager,appWidgetIds);
-        }
-
-        super.onReceive(context, intent);
-    }
-
+    public static final String EXTRA_SYMBOL = "extra:symbol";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -46,11 +33,13 @@ public class StockWidgetProvider extends AppWidgetProvider {
 
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_initial);
             remoteViews.setOnClickPendingIntent(R.id.container, pIntent);
+
             Intent widgetIntent = new Intent(context, StockWidgetService.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
 
-            remoteViews.setRemoteAdapter(R.id.list,widgetIntent);
+            remoteViews.setRemoteAdapter(R.id.list, widgetIntent);
+
             appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
         }
     }
