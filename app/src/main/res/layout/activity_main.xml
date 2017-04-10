@@ -10,14 +10,16 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" />
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:contentDescription="@string/stock_list"/>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
@@ -33,13 +35,15 @@
         app:borderWidth="0dp"
         app:elevation="6dp"
         app:fabSize="normal"
-        app:pressedTranslationZ="12dp" />
+        app:pressedTranslationZ="12dp"
+        android:contentDescription="@string/add_stock"/>
 
-    <Button
-        android:id="@+id/google"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btn"/>
+    <!--<Button-->
+        <!--android:id="@+id/google"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="btn"-->
+        <!--android:contentDescription="@string/search_on_google"/>-->
 
 
     <TextView

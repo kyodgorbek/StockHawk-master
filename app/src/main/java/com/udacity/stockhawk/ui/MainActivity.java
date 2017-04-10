@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
 
+
             PrefUtils.addStock(this, symbol);
             QuoteSyncJob.syncImmediately(this);
         }

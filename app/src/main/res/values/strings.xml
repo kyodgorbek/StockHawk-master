@@ -22,17 +22,24 @@
     <string name="action_change_units" translatable="false">@string/pref_display_mode_key</string>
 
 
-    <string name="dialog_title" translatable="false">Add Stock</string>
+    <string name="dialog_title">Add Stock</string>
     <string name="dialog_hint" translatable="false">Symbol (e.g. GOOG)</string>
-    <string name="dialog_cancel" translatable="false">Cancel</string>
-    <string name="dialog_add" translatable="false">Add</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_add">Add</string>
 
 
-    <string name="error_no_network" translatable="false">No network connectivity! Will load stock cursor when the network is available.</string>
-    <string name="error_no_stocks" translatable="false">No stocks added! Hit the floating action button to add one.</string>
+    <string name="error_no_network">No network connectivity! Will load stock cursor when the network is available.</string>
+    <string name="error_no_stocks">No stocks added! Hit the floating action button to add one.</string>
 
-    <string name="toast_stock_added_no_connectivity" translatable="false">Symbol %s added. Will refresh when network available.</string>
-    <string name="toast_no_connectivity" translatable="false">Will refresh when network available.</string>
-    <string name="widget_title" translatable="false">Awesome Project</string>
+    <string name="toast_stock_added_no_connectivity">Symbol %s added. Will refresh when network available.</string>
+    <string name="toast_no_connectivity">Will refresh when network available.</string>
+    <string name="widget_title">Awesome Project</string>
+    <string name="stock_name" translatable="false">Google</string>
+    <string name="add_stock">Add Stock to the list</string>
+    <string name="search_on_google">Search</string>
+    <string name="stock_list">Stock list</string>
+    <string name="stock_chart">Stock chart</string>
+    <string name="stock_price">Stock price</string>
+    <string name="stock_change">Stock change</string>
 
 </resources>

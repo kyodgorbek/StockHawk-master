@@ -67,10 +67,20 @@ public final class QuoteSyncJob {
             Timber.d(quotes.toString());
 
             ArrayList<ContentValues> quoteCVs = new ArrayList<>();
+            final ArrayList<String> invalidSymbol = new ArrayList<>();
 
             while (iterator.hasNext()) {
                 String symbol = iterator.next();
 
+                if (quotes.get(symbol) != null){
+                    if (!quotes.get(symbol).isValid()) {
+
+                    } else {
+                        quoteCVs.add(quoteCVs);
+                    }
+
+
+                }
 
                 Stock stock = quotes.get(symbol);
                 StockQuote quote = stock.getQuote();
