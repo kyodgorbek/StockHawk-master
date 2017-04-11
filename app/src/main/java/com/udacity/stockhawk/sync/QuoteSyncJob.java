@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
@@ -22,7 +23,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Handler;
 
 import timber.log.Timber;
 import yahoofinance.Stock;
@@ -76,7 +76,9 @@ public final class QuoteSyncJob {
 
 
                 Stock stock = quotes.get(symbol);
+                if(stock == null)continue;
                 StockQuote quote = stock.getQuote();
+
                 if (quotes.get(symbol) != null){
                     if (!quotes.get(symbol).isValid()){
                         continue;

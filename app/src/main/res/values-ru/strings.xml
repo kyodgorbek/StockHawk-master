@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_add">Добавить</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_title">Добавить акции</string>
+    <string name="error_no_network">Нет подключения к сети! Будет загружать курсор акций, когда сеть будет доступна.</string>
+    <string name="error_no_stocks">Нет добавленных запасов! Нажмите кнопку плавающего действия, чтобы добавить его.</string>
+    <string name="toast_no_connectivity">Будет обновляться при наличии сети.</string>
+    <string name="toast_stock_added_no_connectivity">Добавлен символ %s. Будет обновляться при наличии сети.</string>
+    <string name="widget_title">Удивительный проект</string>
+    <string name="search_on_google">Поиск</string>
+    <string name="stock_change">Изменение акции</string>
+    <string name="stock_chart">Диаграмма акции</string>
+    <string name="stock_price">Стоимость акции</string>
+    <string name="stock_list">Список акций</string>
+</resources>
