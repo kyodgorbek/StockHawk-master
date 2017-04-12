@@ -49,6 +49,7 @@ public class StockWidgetProvider extends AppWidgetProvider {
 
             remoteViews.setRemoteAdapter(R.id.list, widgetIntent);
 
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.list);
             appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
 
 
